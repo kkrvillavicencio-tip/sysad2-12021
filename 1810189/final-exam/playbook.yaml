@@ -1,0 +1,96 @@
+---
+- name: Centos cloning
+  hosts:
+    - centos
+  vars_files:
+    - config.yaml
+  roles:
+    - centos_clone
+
+- name: Service installing
+  hosts:
+    - centos
+  vars_files:
+    - config.yaml
+  roles:
+    - ftp_centos
+
+- name: Monitoring Service installing
+  hosts:
+    - centos
+  vars_files:
+    - config.yaml
+  roles:
+    - centos_nagios
+
+- name: Centos MOTD 
+  hosts:
+    - centos
+  vars_files:
+    - config.yaml
+  roles:
+    - motd
+
+- name: Debian cloning
+  hosts:
+    - debian
+  vars_files:
+    - config.yaml
+  roles:
+    - debian_clone
+
+- name: Enterprise Service installing
+  hosts:
+    - debian
+  vars_files:
+    - config.yaml
+  roles:
+    - ftp_debian
+
+- name: Monitoring Service installng
+  hosts:
+    - debian
+  vars_files:
+    - config.yaml
+  roles:
+    - debian_nagios
+
+- name: Debian MOTD 
+  hosts:
+    - debian
+  vars_files:
+    - config.yaml
+  roles:
+    - motd
+      
+- name: SUSE cloning
+  hosts:
+    - suse
+  vars_files:
+    - config.yaml
+  roles:
+    - suse_clone
+
+- name: SUSE Enterprise Service installing
+  hosts:
+    - suse
+  vars_files:
+    - config.yaml
+  roles:
+    - ftp_suse
+
+- name: SUSE Monitoring Service installing
+  hosts:
+    - suse
+  vars_files:
+    - config.yaml
+  roles:
+    - suse_nagios
+
+- name: SUSE MOTD 
+  hosts:
+    - suse
+  vars_files:
+    - config.yaml
+  roles:
+    - motd
