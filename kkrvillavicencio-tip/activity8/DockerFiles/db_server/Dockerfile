@@ -1,0 +1,6 @@
+  
+FROM mysql:latest
+
+ENV MYSQL_ROOT_PASSWORD="kevin"
+
+EXPOSE 3306
